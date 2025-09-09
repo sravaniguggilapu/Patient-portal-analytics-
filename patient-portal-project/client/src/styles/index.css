@@ -1,0 +1,154 @@
+/* Fallback colorful stylesheet - works even if Tailwind isn't applied */
+
+/* Basic resets */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body,#root { height: 100%; }
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f6f8ff 0%, #ffffff 60%);
+  color: #0f172a;
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+/* Top nav */
+nav {
+  background: linear-gradient(90deg, #4b6bff 0%, #3450d6 100%);
+  color: white;
+  padding: 16px 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 6px 18px rgba(52,80,214,0.12);
+}
+nav .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+  font-size:18px;
+}
+nav .logo {
+  width:40px; height:40px; border-radius:10px;
+  background: #ffffff; color:#3450d6; display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+nav .links a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  margin-left: 14px;
+  font-weight:600;
+  font-size:14px;
+}
+nav .links a:hover { text-decoration: underline; opacity:0.95; }
+
+/* Layout container */
+.main {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* two-column layout for large screens */
+@media(min-width: 992px) {
+  .main { grid-template-columns: 2fr 1fr; }
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  border: 1px solid rgba(65,64,66,0.03);
+}
+
+/* Headings & text */
+h1, h2, h3 { color: #0b1220; }
+h1 { font-size: 40px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-bottom: 6px; }
+h3 { font-size: 16px; margin-bottom: 6px; }
+.lead { color: #475569; margin-top:6px; }
+
+/* Stats grid */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+@media(min-width:720px) { .stats { grid-template-columns: repeat(4,1fr); } }
+.stat {
+  background: linear-gradient(180deg,#fbfdff, #ffffff);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid rgba(75,107,255,0.08);
+}
+.stat .label { color:#64748b; font-size:12px; }
+.stat .value { font-size:20px; font-weight:700; margin-top:6px; color:#0b1220; }
+.stat .trend.up { color:#059669; }  /* green */
+.stat .trend.down { color:#ef4444; } /* red */
+
+/* Notifications & tasks */
+ul.notifications { list-style:none; margin-top:8px; color:#334155; }
+ul.notifications li { margin-bottom:8px; font-size:14px; }
+
+/* Goals / progress */
+.progress-bar {
+  width:100%;
+  height:12px;
+  background:#eef2ff;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:8px;
+}
+.progress-bar > span {
+  display:block;
+  height:100%;
+  background: linear-gradient(90deg,#6b8dff,#4b6bff);
+  width: 65%;
+}
+
+/* Table (clinician) */
+.table { width:100%; border-collapse: collapse; margin-top:10px; }
+.table thead th { text-align:left; padding:10px 8px; color:#475569; font-size:13px; border-bottom:1px solid #eef2ff; }
+.table tbody td { padding:10px 8px; border-bottom:1px solid #f1f5f9; }
+
+/* Buttons & links */
+.btn {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  background: linear-gradient(90deg,#4b6bff,#3450d6);
+  color:white; font-weight:700; text-decoration:none;
+  border: none;
+}
+.cta {
+  margin-top:12px;
+}
+
+/* Forms */
+input[type="text"], input[type="password"], input[type="email"] {
+  width:100%; padding:10px; border-radius:8px; border:1px solid #e6eef8; margin-top:6px;
+}
+.form { max-width:480px; margin: 0 auto; }
+
+/* Footer spacing */
+.footer-space { height: 40px; }
+
+/* Small helpers */
+.chips { display:inline-block; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3450d6; font-weight:600; font-size:13px; }
+.small-muted { color:#64748b; font-size:13px; }
+
+/* Quick adjustments to anchor links inside content */
+a { color: #4b6bff; }
+a:hover { text-decoration: underline; opacity: 0.95; }
